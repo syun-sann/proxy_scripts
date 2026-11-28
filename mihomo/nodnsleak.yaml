@@ -417,18 +417,15 @@ rules:
   - AND,((NETWORK,UDP),(DST-PORT,443),(RULE-SET,YouTube)),REJECT
   - RULE-SET,YouTube,YOUTUBE
 
-  # Custom & Service Rules (AI & Direct-defaulting groups above general QUIC block)
+  # Custom & Service Rules
   - RULE-SET,AI,AI
   - RULE-SET,CustomDirect,DIRECT
   - RULE-SET,iCloud,ICLOUD
   - RULE-SET,BiliBili,BILIBILI
   - RULE-SET,SteamCN,DIRECT
-  - RULE-SET,Spotify,SPOTIFY
-
-  # Block QUIC on remaining proxied traffic (avoid QUIC-over-TCP while keeping AI/Direct QUIC intact)
-  - AND,((NETWORK,UDP),(DST-PORT,443)),REJECT
   - RULE-SET,Steam,STEAM
   - RULE-SET,Twitter,TWITTER
+  - RULE-SET,Spotify,SPOTIFY
   - RULE-SET,Microsoft,MICROSOFT
   - RULE-SET,Zoom,ZOOM
 
